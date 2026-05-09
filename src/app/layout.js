@@ -14,13 +14,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${outfitFont.className} h-full antialiased`}
-    >
+    <html lang="en" className={`${outfitFont.className} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <Navbar />
-        {children}
+        <div className="container mx-auto">{children}</div>
         <Footer />
       </body>
     </html>
