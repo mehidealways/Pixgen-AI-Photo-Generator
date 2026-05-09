@@ -9,7 +9,7 @@ const TopGenerations = async () => {
   console.log(topPhotos);
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4 mt-10">Top Generations Photos</h1>
+      <h1 className="text-2xl font-bold my-10">Top Generations Photos</h1>
       <div className="grid grid-cols-4 gap-5">
         {topPhotos.map(photo => (
           <PhotoCard key={photo.id} photo={photo} />

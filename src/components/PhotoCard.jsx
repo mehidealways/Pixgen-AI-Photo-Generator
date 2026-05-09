@@ -1,20 +1,41 @@
-import { Card } from '@heroui/react';
+import { Button, Card, Chip, Separator } from '@heroui/react';
 import Image from 'next/image';
+import { BiDownArrow } from 'react-icons/bi';
 import { FaHeart } from 'react-icons/fa';
+import { FiDownload } from 'react-icons/fi';
 
 const PhotoCard = ({ photo }) => {
   return (
-    <Card className="border">
-      <Image src={photo.imageUrl} alt={photo.title} width={200} height={200} />
+    <Card className="border rounded-md">
+      <div className='relative w-full aspect-square'> 
+
+        <Image src={photo.imageUrl} alt={photo.title} fill className='rounded-md object-cover' />
+        <Chip  className="absolute top-2 right-2">
+          {photo.category}
+        </Chip>
+      </div>
       <div>
-        <h2 className="font-medium">{photo.title}</h2>
+        <h2 className="font-medium  text-xl">{photo.title}</h2>
       </div>
-      <div className='flex items-center gap-2'>
-        <p>
-          <FaHeart className='text-red-400' />
-        </p>
-        <p>{photo.likes}</p>
+
+      <div className='flex items-center  gap-5'>
+        <div className="flex items-center gap-2">
+          <p>{photo.likes}</p>
+          <p>
+            <FaHeart className="text-red-400" />
+          </p>
+        </div>
+        <Separator orientation="vertical" />
+        <div className="flex items-center gap-2">
+          <p>
+            <FiDownload />
+          </p>
+          <p>{photo.downloads}</p>
+        </div>
       </div>
+      <Button variant="outline" className="w-full mt-2">
+        View
+      </Button>
     </Card>
   );
 };
