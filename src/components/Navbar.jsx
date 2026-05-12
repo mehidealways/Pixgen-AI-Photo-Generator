@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <div className="border-b mb-20 px-2">
-      <nav className=" flex justify-between items-center  py-3 container mx-auto w-full">
+    <div className="border-b px-2">
+      <nav className=" flex justify-between items-center  py-3 max-w-7xl mx-auto w-full">
         <div className="flex gap-2 items-center">
           <Image
             src={'/logo.png'}
@@ -34,16 +34,12 @@ const Navbar = () => {
         </ul>
 
         <div className="flex gap-4">
-          <ul className="flex items-center  text-sm gap-2">
+          <ul className="flex items-center gap-2  text-sm">
             <li>
-              <Link className="font-semibold" href={'/signup'}>
-                SignUp
-              </Link>
+              <Link href={'/signup'}>SignUp</Link>
             </li>
             <li>
-              <Link className="font-semibold" href={'/signin'}>
-                SignIn
-              </Link>
+              <Link href={'/signin'}>SignIn</Link>
             </li>
           </ul>
         </div>
